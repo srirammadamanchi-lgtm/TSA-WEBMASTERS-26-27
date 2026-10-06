@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Design tokens: the ONLY place colors and fonts are defined.
+   Use them as Tailwind classes (bg-brand, text-ink, ...). Never hard-code hex values in components. */
+@theme {
+  --color-brand: #4f46e5;
+  --color-brand-dark: #3730a3;
+  --color-accent: #f59e0b;
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-surface: #f8fafc;
+  --color-card: #ffffff;
+  --color-line: #e2e8f0;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  @apply bg-surface text-ink font-sans antialiased;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2 font-semibold text-white transition hover:bg-brand-dark disabled:opacity-60;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-card p-6 shadow-sm;
+  }
+  /* Wrap lesson body text in this for consistent typography. */
+  .prose-lesson {
+    @apply space-y-4 leading-relaxed;
+  }
+  .prose-lesson h2 {
+    @apply mt-8 text-2xl font-bold;
+  }
+}

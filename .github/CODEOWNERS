@@ -1,0 +1,9 @@
+# Replace the placeholders with real GitHub usernames, then uncomment.
+# The owner of a folder is auto-requested as reviewer; a DIFFERENT teammate should still approve.
+
+# /src/modules/concepts/   @concepts-owner
+# /src/modules/tools/      @tools-owner
+# /src/modules/ethics/     @ethics-owner
+# /src/pages/Home.tsx      @home-owner
+# /src/pages/Dashboard.tsx @gamification-owner
+# /src/progress/           @gamification-owner
