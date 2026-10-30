@@ -28,7 +28,7 @@ export function Layout() {
         Skip to content
       </a>
 
-      <header>
+      <header className="relative z-10">
         <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
           {!atStart && (
             <button type="button" className={iconButton} aria-label="Go back" onClick={goBack}>
@@ -42,11 +42,12 @@ export function Layout() {
         </div>
       </header>
 
-      <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 py-4">
+      {/* translateZ(0): own GPU layer, else Safari/WebKit composites the WebGL background over 3D-transformed content (folders, tilted card). */}
+      <main id="main" className="relative z-10 isolate [transform:translateZ(0)] mx-auto w-full max-w-5xl flex-1 px-4 py-4">
         <Outlet />
       </main>
 
-      <footer>
+      <footer className="relative z-10">
         <div className="mx-auto flex max-w-5xl flex-wrap justify-between gap-2 px-4 py-4 text-sm text-muted">
           <span>{SITE_NAME}</span>
           <Link to="/references" className="underline hover:text-ink">

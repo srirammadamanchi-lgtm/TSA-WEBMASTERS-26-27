@@ -72,7 +72,7 @@ function SetupForm({ required, onDone }: { required: boolean; onDone: () => void
           Don't use your real name. Letters, numbers and underscores only.
         </p>
         {error && (
-          <p role="alert" className="mt-1 text-sm font-semibold text-accent">
+          <p role="alert" className="mt-1 text-sm font-semibold text-brand">
             {error}
           </p>
         )}

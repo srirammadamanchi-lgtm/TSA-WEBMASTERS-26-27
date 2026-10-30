@@ -21,7 +21,7 @@ export function PageBackground() {
   const group = pathname === '/' ? 'start' : pathname === '/learn' ? 'learn' : 'read'
 
   return (
-    <div aria-hidden className="fixed inset-0 -z-10 bg-surface">
+    <div aria-hidden className="fixed inset-0 z-0 bg-surface">
       {group === 'start' && (
         <Cubes
           key={group}
