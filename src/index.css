@@ -18,6 +18,11 @@
 }
 
 body {
+  /* Fixed glow behind every page (CSS only: the WebGL background rendered white in Safari). */
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 0%, var(--color-brand-dark), transparent 70%),
+    radial-gradient(ellipse 70% 60% at 100% 100%, var(--color-card), transparent 70%);
+  background-attachment: fixed;
   @apply bg-surface text-ink font-sans antialiased;
 }
 

@@ -94,7 +94,7 @@ function SetupForm({ required, onDone }: { required: boolean; onDone: () => void
                 onChange={() => setAvatar(id)}
                 className="sr-only"
               />
-              <img src={`/art/avatars/${id}.svg`} alt={`Avatar ${i + 1}`} className="aspect-square w-full rounded-lg" />
+              <img src={`/art/avatars/${id}.svg`} alt={`Avatar ${i + 1}`} className="aspect-square w-full rounded-lg bg-ink" />
             </label>
           ))}
         </div>

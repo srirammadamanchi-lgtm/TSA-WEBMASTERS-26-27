@@ -15,7 +15,7 @@ const technologies = [
 // Third-party assets and components (licenses matter). Add a row for anything copied into the repo.
 const credits = [
   {
-    name: 'React Bits (DarkVeil, ClickSpark, TiltedCard, CountUp, ShinyText, SpotlightCard, StarBorder, Folder)',
+    name: 'React Bits (ClickSpark, TiltedCard, CountUp, ShinyText, SpotlightCard, StarBorder, Folder)',
     url: 'https://reactbits.dev',
     license: 'MIT + Commons Clause, copied into src/components/reactbits/ with its license file',
   },

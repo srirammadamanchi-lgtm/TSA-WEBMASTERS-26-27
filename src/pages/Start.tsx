@@ -31,7 +31,7 @@ function ModelTile({ model, trophies, favorite }: { model: GameModel; trophies: 
             alt=""
             width={96}
             height={96}
-            className={`size-20 sm:size-24 ${unlocked ? '' : 'brightness-0 invert opacity-25'}`}
+            className={`size-20 sm:size-24 ${unlocked ? '' : 'grayscale opacity-30'}`}
           />
           {!unlocked && (
             <span className="absolute right-0 top-0 rounded-full bg-card p-1 text-muted">
@@ -70,7 +70,7 @@ export function Start() {
             <img
               src={`/art/avatars/${profile.avatar}.svg`}
               alt="Your avatar"
-              className="size-16 shrink-0 rounded-full border-2 border-accent bg-card"
+              className="size-16 shrink-0 rounded-full border-2 border-accent bg-ink"
             />
             <h1 className="min-w-0 flex-1 truncate font-display text-3xl">{profile.nickname ?? 'Player'}</h1>
             <button

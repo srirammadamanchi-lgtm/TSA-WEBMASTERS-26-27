@@ -3,7 +3,6 @@ import { Link, Outlet, useLocation, useNavigate } from 'react-router'
 import { SITE_NAME } from '../site'
 import { PALETTE } from '../palette'
 import ClickSpark from './reactbits/ClickSpark'
-import DarkVeil from './reactbits/DarkVeil'
 import { BackIcon, HomeIcon } from './Icons'
 
 const iconButton =
@@ -23,10 +22,6 @@ export function Layout() {
 
   return (
     <ClickSpark sparkColor={PALETTE.accent} className="flex min-h-screen flex-col">
-      <div aria-hidden className="fixed inset-0 -z-10">
-        <DarkVeil color={PALETTE.veil} speed={0.4} quality={0.5} />
-      </div>
-
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:rounded focus:bg-card focus:p-2">
         Skip to content
       </a>
