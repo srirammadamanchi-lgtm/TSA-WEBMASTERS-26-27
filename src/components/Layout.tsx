@@ -1,51 +1,55 @@
 import { useEffect } from 'react'
-import { Link, NavLink, Outlet, useLocation } from 'react-router'
-import { SITE_NAME, modules } from '../site'
-import { useProgress } from '../progress'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router'
+import { SITE_NAME } from '../site'
+import { PALETTE } from '../palette'
+import ClickSpark from './reactbits/ClickSpark'
+import DarkVeil from './reactbits/DarkVeil'
+import { BackIcon, HomeIcon } from './Icons'
 
-const navClass = ({ isActive }: { isActive: boolean }) =>
-  `rounded-md px-3 py-2 text-sm font-medium ${isActive ? 'bg-brand text-white' : 'text-muted hover:text-ink'}`
+const iconButton =
+  'inline-flex size-11 items-center justify-center rounded-full border border-line bg-card text-ink transition hover:border-brand'
 
 export function Layout() {
-  const { xp, level } = useProgress()
   const { pathname } = useLocation()
+  const navigate = useNavigate()
+  const atStart = pathname === '/'
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])
 
+  // history.state.idx is 0 on the first page of a visit; going back would leave the site.
+  const goBack = () => (window.history.state?.idx > 0 ? navigate(-1) : navigate('/'))
+
   return (
-    <div className="flex min-h-screen flex-col">
+    <ClickSpark sparkColor={PALETTE.accent} className="flex min-h-screen flex-col">
+      <div aria-hidden className="fixed inset-0 -z-10">
+        <DarkVeil color={PALETTE.veil} speed={0.4} quality={0.5} />
+      </div>
+
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:rounded focus:bg-card focus:p-2">
         Skip to content
       </a>
 
-      <header className="border-b border-line bg-card">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
-          <Link to="/" className="text-lg font-bold text-brand">
-            {SITE_NAME}
+      <header>
+        <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
+          {!atStart && (
+            <button type="button" className={iconButton} aria-label="Go back" onClick={goBack}>
+              <BackIcon />
+            </button>
+          )}
+          <Link to="/" className={iconButton} aria-label="Home">
+            <HomeIcon />
           </Link>
-          <nav aria-label="Main" className="flex flex-1 flex-wrap items-center gap-1">
-            {modules.map((m) => (
-              <NavLink key={m.id} to={`/modules/${m.id}`} className={navClass}>
-                {m.title}
-              </NavLink>
-            ))}
-            <NavLink to="/dashboard" className={navClass}>
-              Dashboard
-            </NavLink>
-          </nav>
-          <Link to="/dashboard" className="rounded-full bg-accent/20 px-3 py-1 text-sm font-semibold">
-            Level {level} · {xp} XP
-          </Link>
+          <span className="font-display text-xl text-accent">{SITE_NAME}</span>
         </div>
       </header>
 
-      <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
+      <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 py-4">
         <Outlet />
       </main>
 
-      <footer className="border-t border-line bg-card">
+      <footer>
         <div className="mx-auto flex max-w-5xl flex-wrap justify-between gap-2 px-4 py-4 text-sm text-muted">
           <span>{SITE_NAME}</span>
           <Link to="/references" className="underline hover:text-ink">
@@ -53,6 +57,6 @@ export function Layout() {
           </Link>
         </div>
       </footer>
-    </div>
+    </ClickSpark>
   )
 }

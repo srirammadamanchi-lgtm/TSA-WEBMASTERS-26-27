@@ -74,8 +74,8 @@ export function LessonPage() {
             Next: {next.title} →
           </Link>
         ) : (
-          <Link to="/dashboard" className="font-semibold text-brand underline">
-            See your progress →
+          <Link to="/learn" className="font-semibold text-brand underline">
+            Back to the learning hub →
           </Link>
         )}
       </div>
