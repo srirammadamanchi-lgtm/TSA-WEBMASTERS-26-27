@@ -26,15 +26,13 @@ export function PageBackground() {
         <FluxLines key={group} colors={[PALETTE.ink, PALETTE.muted, PALETTE.ink]} opacity={0.7} dpr={narrow ? 1 : undefined} />
       )}
       {group === 'learn' && (
-        <Topography key={group} color={PALETTE.muted} lineCount={narrow ? 14 : 22} opacity={0.6} dpr={narrow ? 1 : undefined} />
+        <Topography key={group} color={PALETTE.muted} lineCount={narrow ? 14 : 22} dpr={narrow ? 1 : undefined} />
       )}
       {group === 'read' && (
         <Particles
           key={group}
           particleColors={[PALETTE.ink, PALETTE.muted]}
-          particleCount={narrow ? 80 : 160}
-          opacity={0.5}
-          alphaParticles
+          particleCount={narrow ? 100 : 200}
           clickBurst={false}
         />
       )}

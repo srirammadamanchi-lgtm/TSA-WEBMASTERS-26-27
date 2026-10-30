@@ -55,7 +55,7 @@ export function Layout() {
         </div>
       </header>
 
-      {/* translateZ(0): own GPU layer, else Safari/WebKit composites the WebGL background over 3D-transformed content (folders, tilted card). */}
+      {/* translateZ(0): own GPU layer, else Chrome composited the WebGL background over 3D-transformed content (folders, tilted card). */}
       <main id="main" className="relative z-10 isolate [transform:translateZ(0)] mx-auto w-full max-w-5xl flex-1 px-4 py-4">
         <Outlet />
       </main>
