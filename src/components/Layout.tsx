@@ -1,15 +1,27 @@
-import { useEffect } from 'react'
+import { useEffect, useSyncExternalStore } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router'
 import { SITE_NAME } from '../site'
 import { PALETTE } from '../palette'
 import ClickSpark from './reactbits/ClickSpark'
+import SplashCursor from './reactbits/SplashCursor'
 import { PageBackground } from './PageBackground'
 import { BackIcon, HomeIcon } from './Icons'
 
 const iconButton =
   'inline-flex size-11 items-center justify-center rounded-full border border-line bg-card text-ink transition hover:border-brand'
 
+// Splash Cursor only for a real mouse with motion allowed; touch devices would pay the GPU cost for nothing.
+const cursorQuery = '(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)'
+const subscribeCursor = (cb: () => void) => {
+  const mq = window.matchMedia(cursorQuery)
+  mq.addEventListener('change', cb)
+  return () => mq.removeEventListener('change', cb)
+}
+const useSplashAllowed = () =>
+  useSyncExternalStore(subscribeCursor, () => window.matchMedia(cursorQuery).matches, () => false)
+
 export function Layout() {
+  const splash = useSplashAllowed()
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const atStart = pathname === '/'
@@ -24,6 +36,7 @@ export function Layout() {
   return (
     <ClickSpark sparkColor={PALETTE.accent} className="flex min-h-screen flex-col">
       <PageBackground />
+      {splash && <SplashCursor colors={[PALETTE.brand]} rainbow={false} />}
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:rounded focus:bg-card focus:p-2">
         Skip to content
       </a>

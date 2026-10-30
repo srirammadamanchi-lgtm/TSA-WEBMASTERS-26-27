@@ -23,7 +23,7 @@ Static site: Vite + React + TypeScript + Tailwind CSS v4 + React Router. No back
 | `src/pages/LearnHub.tsx` | Folder-style learning hub | learn hub owner |
 | `src/progress/` | XP, levels, badges | gamification owner |
 | `src/pages/References.tsx` | Sources (required by TSA) | everyone adds their sources |
-| `src/components/` (except `reactbits/`; includes `PageBackground.tsx`, the per-page React Bits 3D background), `src/index.css`, `src/palette.ts`, `src/site.ts`, `src/types.ts`, `src/App.tsx`, `src/pages/Learn.tsx` | Shared shell | change only in a dedicated PR the whole team agrees to |
+| `src/components/` (except `reactbits/`; includes `PageBackground.tsx`, the per-page React Bits backgrounds (Flux Lines, Topography, Particles) and the Splash Cursor in `Layout.tsx`), `src/index.css`, `src/palette.ts`, `src/site.ts`, `src/types.ts`, `src/App.tsx`, `src/pages/Learn.tsx` | Shared shell | change only in a dedicated PR the whole team agrees to |
 
 Stay inside your own folder. If your task seems to need a shared-file change, stop and ask the team.
 

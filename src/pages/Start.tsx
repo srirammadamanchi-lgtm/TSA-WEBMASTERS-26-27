@@ -111,7 +111,7 @@ export function Start() {
         <div className="flex flex-col gap-6">
           <section aria-labelledby="credits-title" className="card">
             <h2 id="credits-title" className="font-display text-3xl">
-              <ShinyText text="Token-Maxing Credits" color={PALETTE.accent} shineColor={PALETTE.ink} />
+              <ShinyText text="Token-Maxing Credits" color={PALETTE.ink} shineColor={PALETTE.muted} />
             </h2>
             <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-2">
               <p className="flex items-center gap-2 text-accent">

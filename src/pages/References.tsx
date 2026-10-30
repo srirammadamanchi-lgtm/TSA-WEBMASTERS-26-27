@@ -15,7 +15,7 @@ const technologies = [
 // Third-party assets and components (licenses matter). Add a row for anything copied into the repo.
 const credits = [
   {
-    name: 'React Bits (ClickSpark, TiltedCard, CountUp, ShinyText, SpotlightCard, StarBorder, Folder, Cubes, DotGrid, ShapeGrid)',
+    name: 'React Bits (ClickSpark, TiltedCard, CountUp, ShinyText, SpotlightCard, StarBorder, Folder, SplashCursor, FluxLines, Topography, Particles)',
     url: 'https://reactbits.dev',
     license: 'MIT + Commons Clause, copied into src/components/reactbits/ with its license file',
   },

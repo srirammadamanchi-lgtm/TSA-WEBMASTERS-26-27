@@ -1,9 +1,9 @@
 import { useSyncExternalStore } from 'react'
 import { useLocation } from 'react-router'
 import { PALETTE } from '../palette'
-import Cubes from './reactbits/Cubes'
-import DotGrid from './reactbits/DotGrid'
-import ShapeGrid from './reactbits/ShapeGrid'
+import FluxLines from './reactbits/FluxLines'
+import Particles from './reactbits/Particles'
+import Topography from './reactbits/Topography'
 
 const narrowQuery = '(max-width: 639px)'
 const subscribe = (cb: () => void) => {
@@ -23,27 +23,19 @@ export function PageBackground() {
   return (
     <div aria-hidden className="fixed inset-0 z-0 bg-surface">
       {group === 'start' && (
-        <Cubes
-          key={group}
-          gridSize={narrow ? 8 : 12}
-          autoAnimate
-          rippleOnClick
-          faceColor={PALETTE.card}
-          edgeColor={PALETTE.accent}
-          rippleColor={PALETTE.ink}
-        />
+        <FluxLines key={group} colors={[PALETTE.ink, PALETTE.muted, PALETTE.ink]} opacity={0.7} dpr={narrow ? 1 : undefined} />
       )}
       {group === 'learn' && (
-        <DotGrid key={group} baseColor={PALETTE.brandDark} activeColor={PALETTE.accent} opacity={0.6} />
+        <Topography key={group} color={PALETTE.muted} lineCount={narrow ? 14 : 22} opacity={0.6} dpr={narrow ? 1 : undefined} />
       )}
       {group === 'read' && (
-        <ShapeGrid
+        <Particles
           key={group}
-          direction="diagonal"
-          speed={0.3}
-          lineColor={PALETTE.line}
-          hoverColor={PALETTE.brand}
-          hoverFillColor={PALETTE.brandDark}
+          particleColors={[PALETTE.ink, PALETTE.muted]}
+          particleCount={narrow ? 80 : 160}
+          opacity={0.5}
+          alphaParticles
+          clickBurst={false}
         />
       )}
     </div>

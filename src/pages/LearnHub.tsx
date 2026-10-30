@@ -18,7 +18,7 @@ export function LearnHub() {
           <li key={m.id} className="flex flex-col items-center gap-3 text-center">
             <Folder
               label={m.title}
-              color={PALETTE.brand}
+              color={PALETTE.soft}
               items={['Coming soon']}
               onOpenChange={(open) => setOpened((cur) => (open ? m.id : cur === m.id ? null : cur))}
             />
