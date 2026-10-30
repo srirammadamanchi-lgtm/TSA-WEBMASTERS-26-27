@@ -4,25 +4,20 @@
    Use them as Tailwind classes (bg-brand, text-ink, ...). Never hard-code hex values in components.
    Exception: React Bits props that need real color strings read them from palette.ts (keep it in sync). */
 @theme {
-  --color-brand: #a78bfa;
-  --color-brand-dark: #6d28d9;
-  --color-accent: #fbbf24;
-  --color-on-accent: #1b1233;
-  --color-ink: #f1f5f9;
-  --color-muted: #b4bdd6;
-  --color-surface: #0f0c29;
-  --color-card: #1c1847;
-  --color-line: #3a3570;
+  --color-brand: #f87171;
+  --color-brand-dark: #b91c1c;
+  --color-accent: #dc2626;
+  --color-on-accent: #ffffff;
+  --color-ink: #fafafa;
+  --color-muted: #a3a3a3;
+  --color-surface: #0a0a0a;
+  --color-card: #141414;
+  --color-line: #2e2e2e;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Lilita One", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  /* Fixed glow behind every page (CSS only: the WebGL background rendered white in Safari). */
-  background-image:
-    radial-gradient(ellipse 80% 60% at 15% 0%, var(--color-brand-dark), transparent 70%),
-    radial-gradient(ellipse 70% 60% at 100% 100%, var(--color-card), transparent 70%);
-  background-attachment: fixed;
   @apply bg-surface text-ink font-sans antialiased;
 }
 
@@ -35,7 +30,7 @@ body {
     @apply inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 font-semibold text-on-accent transition hover:brightness-110 disabled:opacity-60;
   }
   .card {
-    @apply rounded-2xl border border-line bg-card p-6 shadow-sm;
+    @apply rounded-2xl border border-line bg-card/90 p-6 shadow-sm;
   }
   /* Wrap lesson body text in this for consistent typography. */
   .prose-lesson {

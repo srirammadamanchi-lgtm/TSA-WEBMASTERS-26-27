@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation, useNavigate } from 'react-router'
 import { SITE_NAME } from '../site'
 import { PALETTE } from '../palette'
 import ClickSpark from './reactbits/ClickSpark'
+import { PageBackground } from './PageBackground'
 import { BackIcon, HomeIcon } from './Icons'
 
 const iconButton =
@@ -22,6 +23,7 @@ export function Layout() {
 
   return (
     <ClickSpark sparkColor={PALETTE.accent} className="flex min-h-screen flex-col">
+      <PageBackground />
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:m-2 focus:rounded focus:bg-card focus:p-2">
         Skip to content
       </a>

@@ -15,7 +15,7 @@ const technologies = [
 // Third-party assets and components (licenses matter). Add a row for anything copied into the repo.
 const credits = [
   {
-    name: 'React Bits (ClickSpark, TiltedCard, CountUp, ShinyText, SpotlightCard, StarBorder, Folder)',
+    name: 'React Bits (ClickSpark, TiltedCard, CountUp, ShinyText, SpotlightCard, StarBorder, Folder, Cubes, DotGrid, ShapeGrid)',
     url: 'https://reactbits.dev',
     license: 'MIT + Commons Clause, copied into src/components/reactbits/ with its license file',
   },
@@ -30,8 +30,8 @@ const credits = [
     license: 'CC0 1.0',
   },
   {
-    name: 'Lilita One font (via Fontsource)',
-    url: 'https://fontsource.org/fonts/lilita-one',
+    name: 'Chakra Petch font (via Fontsource)',
+    url: 'https://fontsource.org/fonts/chakra-petch',
     license: 'SIL Open Font License 1.1',
   },
 ]
