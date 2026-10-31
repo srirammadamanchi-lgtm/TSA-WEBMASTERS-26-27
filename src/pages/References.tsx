@@ -9,6 +9,31 @@ const technologies = [
   { name: 'Vite', url: 'https://vite.dev' },
   { name: 'Tailwind CSS', url: 'https://tailwindcss.com' },
   { name: 'TypeScript', url: 'https://www.typescriptlang.org' },
+  { name: 'Motion (animation library)', url: 'https://motion.dev' },
+]
+
+// Third-party assets and components (licenses matter). Add a row for anything copied into the repo.
+const credits = [
+  {
+    name: 'React Bits (ClickSpark, TiltedCard, CountUp, ShinyText, SpotlightCard, StarBorder, Folder, SplashCursor, FluxLines, Topography, Particles)',
+    url: 'https://reactbits.dev',
+    license: 'MIT + Commons Clause, copied into src/components/reactbits/ with its license file',
+  },
+  {
+    name: 'DiceBear Voxel Bot (AI model art)',
+    url: 'https://www.dicebear.com/styles/voxel-bot/',
+    license: 'CC0 1.0',
+  },
+  {
+    name: 'DiceBear Notionists (player avatars)',
+    url: 'https://www.dicebear.com/styles/notionists/',
+    license: 'CC0 1.0',
+  },
+  {
+    name: 'Chakra Petch font (via Fontsource)',
+    url: 'https://fontsource.org/fonts/chakra-petch',
+    license: 'SIL Open Font License 1.1',
+  },
 ]
 
 export function References() {
@@ -34,6 +59,21 @@ export function References() {
             </li>
           ))}
         </ul>
+
+        <h2>Art, fonts and components</h2>
+        <ul className="list-disc pl-6">
+          {credits.map((c) => (
+            <li key={c.name}>
+              <a href={c.url} className="text-brand underline">
+                {c.name}
+              </a>{' '}
+              - {c.license}
+            </li>
+          ))}
+        </ul>
+        <p>
+          The start page layout is inspired by the Brawl Stars profile screen (Supercell). No game assets are used.
+        </p>
 
         <h2>Copyright permissions</h2>
         {/* TODO: list written permission for any copyrighted text, image or sound, or keep this statement true. */}
